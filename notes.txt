@@ -1,0 +1,20 @@
+passwords = ["Fernando", "Fernando2002@!", "Norma51", "Fernando10"]
+cuadro_lista = tk.Listbox(ventana, width=30, selectmode="multiple")
+cuadro_lista.pack()
+for elemento in passwords:
+    cuadro_lista.insert(tk.END, elemento)
+
+
+
+ add_window = tk.Tk()
+        add_window.title("Actualiza la contraseña")
+        add_window.geometry("300x150")
+
+        etiqueta = tk.Label(add_window, text="Ingresa una nueva contraseña")
+        etiqueta.pack()
+
+        update_box_texto = tk.Entry(add_window, show="*")
+        update_box_texto.pack()
+
+        update_button = tk.Button(add_window, text="Actualizar la contraseña", command=save_pass)
+        update_button.pack()
