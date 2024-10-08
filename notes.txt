@@ -18,3 +18,5 @@ for elemento in passwords:
 
         update_button = tk.Button(add_window, text="Actualizar la contraseña", command=save_pass)
         update_button.pack()
+
+--------------Falta el boton de ver original---------------------------

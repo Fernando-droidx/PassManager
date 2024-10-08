@@ -27,6 +27,11 @@ if __name__ == '__main__':
         frame_botones, text="Actualizar",font=("Helvetica"), command=partial(pm.actualizar_pass, lista))
     boton_actualizar.pack(side="left",padx=20, pady=20)
 
+
+    boton_verpass = tk.Button(
+        frame_botones,font=("Helvetica"), text="Ver la contrasena", command=partial(pm.show, lista))
+    boton_verpass.pack(side="left",padx=20, pady=20)
+
     frame_botones.pack()
 
 

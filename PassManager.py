@@ -11,7 +11,7 @@ class PassManager:
             if passwd != "":
                 self.passwds.append(passwd)
                 lista.insert(tk.END, long*'*')
-                print(passwd)
+                mg.showinfo(title="Pass Original", message=f"Password: {passwd}")
                 add_window.destroy()
             else:
                 mg.showerror(title='Ingresa Texto', message='Tienes que ingresar texto para guardar')
@@ -28,6 +28,17 @@ class PassManager:
 
         save_button = tk.Button(add_window, text="Guardar la contraseña", command=save_pass)
         save_button.pack()
+
+
+    def show(self, lista):
+        selection = lista.curselection()  # Seleccionar el texto
+        if not selection:
+            mg.showerror("Error", "Selecciona una contraseña para actualizar")
+        else:
+            index = selection[0]
+            se = self.passwds[index]
+            mg.showinfo("Ver contrasena", f"La contrasena es {se} ")
+
 
     def eliminar_pass(self, lista):
         selection = lista.curselection()
@@ -46,9 +57,11 @@ class PassManager:
                 index = selection[0]
                 lista.delete(index)
                 var = update_box_texto.get()
+                print(var)
                 long = len(var)
                 lista.insert(index, long*'*')
                 mg.showinfo(title="Actulizacion", message="Actualizacion de la contrasena")
+                add_window.destroy()
 
             add_window = tk.Tk()
             add_window.title("Actualizar contraseña")
@@ -60,7 +73,12 @@ class PassManager:
             update_box_texto = tk.Entry(add_window, show="*")
             update_box_texto.pack()
 
+            show_button = tk.Button(add_window, text="Ver contrasena original", command=show_original)
+            show_button.pack()
+
             update_button = tk.Button(add_window, text="Actualizar la contraseña", command=save_pass)
             update_button.pack()
+
+
 
 
