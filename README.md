@@ -1,6 +1,8 @@
 # Password Manager
 
-Este proyecto es una aplicación gráfica para la gestión de contraseñas, creada con `Tkinter` en Python. Permite agregar, eliminar y actualizar contraseñas mientras las muestra de manera oculta con asteriscos (`*`) en la interfaz gráfica, manteniendo las contraseñas reales seguras en una lista interna.
+Este proyecto es una aplicación gráfica para la gestión de contraseñas, 
+creada con `Tkinter` en Python. 
+Permite agregar, eliminar y actualizar contraseñas todo guardado en un diccionario para que solo salga la cuenta asociada a la contraseña.
 
 ## Funcionalidades
 
@@ -38,7 +40,7 @@ Al ejecutar la aplicación, se abrirá una ventana principal con tres botones: A
 
 ### Agregar Contraseña:
 
-Al hacer clic en "Agregar", se abrirá una ventana secundaria donde puedes ingresar una nueva contraseña. Esta se añadirá al Listbox como una cadena de asteriscos, pero la contraseña real se almacenará en una lista interna. y no se vera
+Al hacer clic en "Agregar", se abrirá una ventana secundaria donde puedes ingresar una nueva contraseña. Esta se añadirá al Listbox el nombre de la cuenta, pero la contraseña real se almacenará en un valor de un map interno. y no se vera
 ### Eliminar Contraseña:
 
 Selecciona una contraseña en el Listbox y presiona el botón "Eliminar". La contraseña seleccionada se eliminará de la interfaz y de la lista interna.
