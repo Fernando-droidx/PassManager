@@ -38,13 +38,16 @@ Al ejecutar la aplicación, se abrirá una ventana principal con tres botones: A
 
 ### Agregar Contraseña:
 
-Al hacer clic en "Agregar", se abrirá una ventana secundaria donde puedes ingresar una nueva contraseña. Esta se añadirá al Listbox como una cadena de asteriscos, pero la contraseña real se almacenará en una lista interna.
+Al hacer clic en "Agregar", se abrirá una ventana secundaria donde puedes ingresar una nueva contraseña. Esta se añadirá al Listbox como una cadena de asteriscos, pero la contraseña real se almacenará en una lista interna. y no se vera
 ### Eliminar Contraseña:
 
 Selecciona una contraseña en el Listbox y presiona el botón "Eliminar". La contraseña seleccionada se eliminará de la interfaz y de la lista interna.
 ### Actualizar Contraseña:
 
 Selecciona una contraseña en el Listbox, presiona "Actualizar" y se abrirá una ventana donde podrás ingresar una nueva contraseña. La contraseña se actualizará en la lista interna y se reflejará en el Listbox como una cadena de asteriscos.
+
+### Mostrar Contraseña
+Selecciona la contrasena que quieras ver y te la dara y solo tu la podras ver
 
 ## Contribuciones
 Haz un fork del repositorio.
