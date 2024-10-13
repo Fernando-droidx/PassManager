@@ -6,7 +6,7 @@ Permite agregar, eliminar y actualizar contraseñas todo guardado en un dicciona
 
 ## Funcionalidades
 
-- **Agregar Contraseña**: Permite al usuario ingresar una nueva contraseña que se almacena internamente y se muestra oculta en la interfaz gráfica con asteriscos (`*`).
+- **Agregar Contraseña**: Permite al usuario ingresar una nueva contraseña y este la almacena en un diccionario, y se muestra en un listbox el nombre de la cuenta asociada a la contrasena.
 - **Eliminar Contraseña**: El usuario puede seleccionar una contraseña del `Listbox` y eliminarla tanto de la interfaz como de la lista interna.
 - **Actualizar Contraseña**: Permite seleccionar una contraseña existente, ingresar una nueva, y actualizarla tanto en la interfaz como en la lista interna.
   
