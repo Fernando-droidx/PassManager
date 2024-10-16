@@ -5,11 +5,21 @@ from tkinter import messagebox as mg
 class PassManager:
     def __init__(self):
         self.passwds = {}
+    def pass_verification(self, passwd):
+        if len(passwd) < 7:
+            mg.showerror(title='Longitud', message='La contrasena no es suficiente de 8 caracteres')
+            return False
+        return True
     def agregar_pass(self, lista):
 
         def save_pass():
             name_account = box_acc_texto.get().strip()
             passwd = box_pass_texto.get().strip()
+            if not self.pass_verification(passwd):
+                add_window.destroy()
+                return "Contrasena incorrecta"
+
+
             if passwd != "":
                 self.passwds[name_account] = passwd
                 lista.insert(tk.END, name_account)
@@ -65,32 +75,46 @@ class PassManager:
             mg.showerror("Error", "Selecciona una cuenta para eliminar")
 
     def actualizar_pass(self, lista):
+        
         selection = lista.curselection()#Seleccionar el texto
         if not selection:
             mg.showerror("Error", "Selecciona una contraseña para actualizar")
         else:
             def save_pass():
                 index = selection[0]
-                lista.delete(index)
-                var = update_box_texto.get()
-                print(var)
-                long = len(var)
-                lista.insert(index, long*'*')
-                mg.showinfo(title="Actulizacion", message="Actualizacion de la contrasena")
-                add_window.destroy()
+                lista.delete(index)#borramos el elemento seleccionado
+                var_pass = update_passwd_box_texto.get()
+                var_acoun = update_acc_box_texto.get()
+                if not self.pass_verification(var_pass):
+                    add_window.destroy()
+                    return "Contrasena incorrecta"
+
+                if var_pass != "":
+                    self.passwds[var_acoun] = var_pass
+                    lista.insert(tk.END, var_acoun)
+                    mg.showinfo(title="Update Password", message=f"Password: {var_pass}")
+                    add_window.destroy()
+                else:
+                    mg.showerror(title='Ingresa Texto', message='Tienes que ingresar texto para guardar')
 
             add_window = tk.Tk()
             add_window.title("Actualizar contraseña")
             add_window.geometry("300x150")
 
-            etiqueta = tk.Label(add_window, text="Ingresa una nueva contraseña")
+            etiqueta = tk.Label(add_window, text="Cuenta de usuario")
             etiqueta.pack()
 
-            update_box_texto = tk.Entry(add_window, show="*")
-            update_box_texto.pack()
+            update_acc_box_texto = tk.Entry(add_window)
+            update_acc_box_texto.pack()
 
-            update_button = tk.Button(add_window, text="Actualizar la contraseña", command=save_pass)
-            update_button.pack()
+            etiqueta = tk.Label(add_window, text="Contraseña de usuario")
+            etiqueta.pack()
+
+            update_passwd_box_texto = tk.Entry(add_window, show="*")
+            update_passwd_box_texto.pack()
+
+            save_button = tk.Button(add_window, text="Actualizar la contraseña", command=save_pass)
+            save_button.pack()
 
 
 
